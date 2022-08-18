@@ -108,9 +108,7 @@ export default {
       productSearch: '',
       productQTY: 1,
       selectedStock: '',
-      selectedProducts: [
-        {}
-      ],
+      selectedProducts: [],
       orderReference: null,
       products: json
     }
