@@ -109,9 +109,7 @@ export default {
       productQTY: 1,
       selectedStock: '',
       selectedProducts: [
-        {productCode: '195R-BK-L', QTY: 2},
-        {productCode: '195R-BK-S', QTY: 1},
-        {productCode: 'A101', QTY: 1}
+        {}
       ],
       orderReference: null,
       products: json
