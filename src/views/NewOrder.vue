@@ -2,7 +2,7 @@
   <div class="form px-4 pt-12 pb-24 bg-sllightbg font-poppins">
     <form>
     <div class="grid grid-cols-4 gap-6">
-      <div class="col-span-3 product-table">
+      <div class="col-span-4 lg:col-span-3 product-table">
 
         <div class="customerSelection rounded-lg p-4 mb-8 text-sm">
           <Select2 class="outline-none shippingaddress px-2 py-1 bg-black" v-model="selectedCustomer" :options="loadedCustomers" :settings="{ width: '100%', placeholder: 'Search a customer/address'}" @select="customerSelect($event)"/>
@@ -43,29 +43,29 @@
         </div>
 
         <div class="optionals grid grid-cols-6 gap-6 ">
-          <div class="myshadow bg-slwhite rounded-lg p-4 col-span-2">
+          <div class="myshadow bg-slwhite rounded-lg p-4 lg:col-span-2 col-span-3">
             <p class="mb-2">Delivery date:</p>
             <input type="date" required v-model="deliveryDate" class="outline-none rounded-lg px-3 py-2 mr-8 bg-sllightbg w-full border-1 border-slgrey">
           </div>
 
-          <div class="myshadow bg-slwhite rounded-lg p-4 col-span-2">
+          <div class="myshadow bg-slwhite rounded-lg p-4 lg:col-span-2 col-span-3">
             <p class="mb-2">Reference:</p>
             <input type="text" required v-model="orderReference" class="outline-none rounded-lg px-3 py-2 mr-8 bg-sllightbg w-full border-1 border-slgrey" placeholder="Order reference">
           </div>
         </div>
 
-        <div class="temporary mt-12 text-xs">
+        <!-- <div class="temporary mt-12 text-xs">
           <p>Selected customer: {{selectedCustomer}}</p>
           <p>Shipping address: {{shippingAddress}}</p>
           <p>Product search: {{productSearch}}</p>
           <p>Delivery date: {{deliveryDate}}</p>
           <p>Order reference: {{orderReference}}</p>      
-        </div>
+        </div> -->
 
 
         </div>
         
-      <div class="shopping-cart">
+      <div class="shopping-cart col-span-3 lg:col-span-1">
         <p class="mb-3">Selected products</p>
           <div class="productsTable bg-slwhite myshadow rounded-lg p-4">
             <div class="productList-head flex justify-between gap-1 mb-4 font-semibold">
@@ -121,14 +121,12 @@ export default {
       if(this.productSearch !== '' && this.productQTY !== '') {
         this.selectedProducts.push({productCode: this.productSearch, QTY: this.productQTY})
       }
-      console.log(this.selectedProducts)
+      //console.log(this.selectedProducts)
     },
     emptyProductList(){
-      console.log("testing empty product list")
       this.selectedProducts.length = 0
     },
     removeProduct(index){
-      console.log("removing specific item")
       this.selectedProducts.splice(index, 1)
     },
     mySelectEvent({id, text}){
@@ -136,11 +134,11 @@ export default {
       this.selectedStock = selectedProduct.stock
     },
       customerSelect({id, text}){
-      console.log("selected a customer")
+      //console.log("selected a customer")
     }
   },
   mounted(){
-    customers.forEach(customer => console.log(customer))
+    //customers.forEach(customer => console.log(customer))
   },
 }
 </script>
