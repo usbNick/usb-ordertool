@@ -1,0 +1,9 @@
+[
+    {"id": "195R-BK-S", "text": "195R-BK-S", "barcode": "029369195127", "stock": 1},
+    {"id": "195R-BK-M", "text": "195R-BK-M", "barcode": "029369195134", "stock": 2},
+    {"id": "195R-BK-L", "text": "195R-BK-L", "barcode": "029369195141", "stock": 3},
+    {"id": "199R-BK-L", "text": "199R-BK-L", "barcode": "029369195141", "stock": 4},
+    {"id": "199R-BK-M", "text": "199R-BK-M", "barcode": "029369195141", "stock": 5},
+    {"id": "199R-BK-S", "text": "199R-BK-S", "barcode": "029369195141", "stock": 6},
+    {"id": "HOIR-BK-S", "text": "HOIR-BK-S", "barcode": "029369195141", "stock": 7}
+]
