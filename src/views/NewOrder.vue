@@ -123,8 +123,8 @@ export default {
         selectedProducts: this.selectedProducts
       }, {
         auth: {
-          username: 'SBOREST1',
-          password: 'SBORESTNV'
+          username: process.env.USERNAME,
+          password: process.env.PASSWORD
         }
       }).then(response => {
         console.log(response)
