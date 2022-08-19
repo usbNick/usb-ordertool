@@ -93,6 +93,7 @@
 
 <script>
 // @ is an alias to /src
+import axios from "axios"
 import Select2 from 'vue3-select2-component'
 import customers from "../data/customers.json"
 import json from "../data/products.json"
@@ -116,6 +117,18 @@ export default {
   methods: {
     createOrder(){
       console.log("testing create order button")
+      axios.post(`https://eu1.babelway.net/rest/USBE/message.json`, {
+        selectedCustomer: this.selectedCustomer,
+        customerAddressId: this.shippingAddress,
+        selectedProducts: this.selectedProducts
+      }, {
+        auth: {
+          username: 'SBOREST1',
+          password: 'SBORESTNV'
+        }
+      }).then(response => {
+        console.log(response)
+      })
     },
     addProduct() {
       if(this.productSearch !== '' && this.productQTY !== '') {
