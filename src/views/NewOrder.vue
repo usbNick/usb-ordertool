@@ -109,8 +109,8 @@ export default {
       productQTY: 1,
       selectedStock: '',
       selectedProducts: [],
-      orderReference: null,
-      products: json
+      orderReference: '',
+      products: null
     }
   },
   methods: {
@@ -129,16 +129,20 @@ export default {
     removeProduct(index){
       this.selectedProducts.splice(index, 1)
     },
-    mySelectEvent({id, text}){
-      let selectedProduct = json.find(obj => obj.id === id)
+    mySelectEvent({text}){
+      let selectedProduct = json.find(obj => obj.text === text)
       this.selectedStock = selectedProduct.stock
     },
       customerSelect({id, text}){
       //console.log("selected a customer")
     }
   },
-  mounted(){
+  async mounted(){
     //customers.forEach(customer => console.log(customer))
+    await import("../data/products.json")
+      .then(({default: json}) => {
+          this.products = json;
+    });
   },
 }
 </script>
