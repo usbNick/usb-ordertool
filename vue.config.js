@@ -4,4 +4,7 @@ module.exports = {
         // see https://github.com/windicss/vite-plugin-windicss/blob/main/packages/plugin-utils/src/options.ts
       },
     },
+    devServer: {
+      proxy: 'https://eu1.babelway.net'
+    }
   }
