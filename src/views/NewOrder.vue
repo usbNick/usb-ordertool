@@ -117,16 +117,20 @@ export default {
   methods: {
     createOrder(){
       console.log("testing create order button")
-      axios.post(`https://eu1.babelway.net/rest/USBE/message.json`, {
+      axios.post(`http://localhost:3000/`, {
         selectedCustomer: this.selectedCustomer,
-        customerAddressId: this.shippingAddress,
-        selectedProducts: this.selectedProducts
-      }, {
-        auth: {
-          username: process.env.USERNAME,
-          password: process.env.PASSWORD
-        }
-      }).then(response => {
+        shippingAddress: this.shippingAddress,
+        deliveryDate: this.deliveryDate,
+        selectedProducts: this.selectedProducts,
+        orderReference: this.orderReference
+      }, 
+      // {
+      //   auth: {
+      //     username: process.env.USERNAME,
+      //     password: process.env.PASSWORD
+      //   }
+      // }
+      ).then(response => {
         console.log(response)
       })
     },
